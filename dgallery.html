@@ -3,65 +3,7 @@
 <head>
 <title>RubberGallery</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<style>
-:root{
-  --bg:#141e30;
-  --radius:10px;
-  --img-h:200px;
-  --overlay-bg:rgba(0,0,0,.8);
-  --text:#fff;
-  --transition:.3s;
-}
-
-body{background:var(--bg);}
-
-.card{
-  position:relative;
-  overflow:hidden;
-  border:none;
-  border-radius:var(--radius);
-}
-
-.card img{
-  width:100%;
-  height:var(--img-h);
-  object-fit:cover;
-  transition:var(--transition);
-  cursor:pointer;
-}
-
-.card:hover img{transform:scale(1.1);}
-
-.overlay{
-  position:absolute;
-  bottom:0;
-  width:100%;
-  padding:8px;
-  background:linear-gradient(to top,var(--overlay-bg),transparent);
-  color:var(--text);
-  font-size:.85rem;
-}
-
-.overlay small{opacity:.8; display:block;}
-
-/* modal */
-.modal-box{
-  position:fixed;
-  inset:0;
-  display:none;
-  justify-content:center;
-  align-items:center;
-  background:rgba(0,0,0,.9);
-}
-
-.modal-box.active{display:flex;}
-
-.modal-box img{
-  max-width:90%;
-  max-height:90%;
-  border-radius:var(--radius);
-}
-</style>
+<link href="css/ui.css" rel="stylesheet">
 </head>
 
 <body>
@@ -75,49 +17,7 @@ body{background:var(--bg);}
   <img id="modImg">
 </div>
 
-<script>
-const gallery = document.getElementById("gallery");
-const modal = document.getElementById("modal");
-const modalImg = document.getElementById("modImg");
-
-fetch("https://trackbit.nielitkohima.in/fetch_images.php")
-.then(r=>r.json())
-.then(({data})=>{
-
-  data.sort((a,b)=>new Date(a.uploaded_at)-new Date(b.uploaded_at));
-
-  data.forEach(i=>{
-
-    const col=document.createElement("div");
-    col.className="col-6 col-md-4 col-lg-3 mb-3";
-
-    const card=document.createElement("div");
-    card.className="card";
-
-    const img=document.createElement("img");
-    img.src=i.file_path;
-
-    const overlay=document.createElement("div");
-    overlay.className="overlay";
-    overlay.innerHTML=`
-      <strong>${i.title}</strong>
-      <small>${new Date(i.uploaded_at).toLocaleDateString()}</small>
-    `;
-
-    img.onclick=()=>{
-      modalImg.src=i.file_path;
-      modal.classList.add("active");
-    };
-
-    card.append(img,overlay);
-    col.appendChild(card);
-    gallery.appendChild(col);
-  });
-
-});
-
-modal.onclick=()=>modal.classList.remove("active");
-</script>
+<script src="js/js.js"></script>
 
 </body>
 </html>

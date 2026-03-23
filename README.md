@@ -10,7 +10,6 @@ web_demo : https://fswdpract4.pages.dev
 - 🎨 Modern gradient background
 - ⚡ Lightweight (no Bootstrap JS required)
 
----
 
 ## 🛠️ Technologies Used ##
 
@@ -19,16 +18,15 @@ web_demo : https://fswdpract4.pages.dev
 - JavaScript (Fetch API)
 - Bootstrap 5 (Grid system only)
 
----
 
 ## 📂 Project Structure ##
-
+```
 project/
 │── dgallery.html
 │── README.md
 │── _redirects
 
-
+```
 ## 🌐 API Used ##
 
 Images are fetched from:
@@ -36,7 +34,7 @@ Images are fetched from:
 https://##############.php
 
 Sample Response:
-
+```
 {
   "data": [
     {
@@ -47,7 +45,7 @@ Sample Response:
     }
   ]
 }
-
+```
 ## 👨‍💻 Author ##
 
 Developed as a learning project to understand:

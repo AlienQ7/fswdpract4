@@ -21,7 +21,11 @@ web_demo : https://fswdpract4.pages.dev
 
 ## 📂 Project Structure ##
 ```
-project/
+fswdpract4/
+│── js/
+    │──js.js
+│── css/
+    │── ui.css
 │── dgallery.html
 │── README.md
 │── _redirects

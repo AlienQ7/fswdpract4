@@ -1,6 +1,6 @@
 const gallery = document.getElementById("gallery");
 const modal = document.getElementById("modal");
-const modalImg = document.getElementById("modalImg");
+const modalImg = document.getElementById("modImg");
 
 fetch("https://trackbit.nielitkohima.in/fetch_images.php")
 .then(r=>r.json())
@@ -27,7 +27,7 @@ fetch("https://trackbit.nielitkohima.in/fetch_images.php")
     `;
 
     img.onclick=()=>{
-      modalImg.src=i.file_path;
+      modImg.src=i.file_path;
       modal.classList.add("active");
     };
 

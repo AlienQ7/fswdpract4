@@ -23,13 +23,12 @@ web_demo : https://fswdpract4.pages.dev
 ```
 fswdpract4/
 │── js/
-    │──js.js
+│    └── js.js
 │── css/
-    │── ui.css
+│    └── ui.css
 │── dgallery.html
 │── README.md
 │── _redirects
-
 ```
 ## 🌐 API Used ##
 

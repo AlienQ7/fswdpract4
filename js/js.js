@@ -1,6 +1,6 @@
 const gallery = document.getElementById("gallery");
 const modal = document.getElementById("modal");
-const modalImg = document.getElementById("modImg");
+const modImg = document.getElementById("modImg");
 
 fetch("https://trackbit.nielitkohima.in/fetch_images.php")
 .then(r=>r.json())
